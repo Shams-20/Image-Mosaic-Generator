@@ -72,10 +72,13 @@ After running `main.py`, you’ll get two beautiful nightmares:
 
 ---
 
-## Inserting Image Previews 
+## Image Previews 
+
+![Mona Input](mona.png)  
+![Shrek](shrek.jpeg)
 
 ![Single Tile Output](mosaic_single.png)  
-![Photomosaic Output](photomosaic_photo.png)
+![Photomosaic Output](mosaic_photo.png)
 
 
 
