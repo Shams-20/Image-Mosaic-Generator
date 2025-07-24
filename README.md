@@ -74,11 +74,21 @@ After running `main.py`, you’ll get two beautiful nightmares:
 
 ## Image Previews 
 
-![Mona Input](mona.png)  
-![Shrek](shrek.jpeg)
+## 🎯 Original Inputs
 
-![Single Tile Output](mosaic_single.png)  
-![Photomosaic Output](mosaic_photo.png)
+<p float="left">
+  <img src="mona.png" width="300" alt="Mona Input" />
+  <img src="shrek.jpeg"  alt="Shrek Tile" />
+</p>
+
+---
+
+## 🧩 Mosaic Outputs
+
+<p float="left">
+  <img src="mosaic_single.png" width="300" alt="Single Tile Output" />
+  <img src="mosaic_photo.png" width="300" alt="Photomosaic Output" />
+</p>
 
 
 
