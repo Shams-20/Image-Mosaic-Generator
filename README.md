@@ -4,7 +4,7 @@ A Python project that turns boring grayscale images into **photomosaics**, using
 - A **single tile** (repeated and adjusted for brightness)
 - Or a set of **multiple tile images** for more detailed results
 
----
+
 
 ## How It Works
 
@@ -14,7 +14,7 @@ This program:
 3. Matches parts of the target image to the best matching tile based on **brightness**.
 4. Builds a whole-ass mosaic that looks 🔥 from a distance, and cursed up close.
 
----
+
 
 ## Project Structure
 
@@ -43,7 +43,7 @@ These packages do all the dirty work:
 - `Pillow` → handles all your pixel crap  
 - `matplotlib` → shows off the sexy output
 
----
+
 
 ## How to Run
 
@@ -61,7 +61,7 @@ cd Image-Mosaic-Generator
 - Drop a bunch of grayscale tiles into the `tiles/` folder. (Run the Code present in /tiles folder)
 - Tile size should be 8x8 pixels for best results.
 
----
+
 
 ## Output
 
@@ -70,7 +70,7 @@ After running `main.py`, you’ll get two beautiful nightmares:
 - `mosaic_cartman.png` → The mosaic using the single tile (`shrek.jpeg`)  
 - `photomosaic_output.png` → The multi-tile photomosaic using images from `tiles/`
 
----
+
 
 ## Original Inputs
 
@@ -79,7 +79,7 @@ After running `main.py`, you’ll get two beautiful nightmares:
   <img src="shrek.jpeg"  alt="Shrek Tile" />
 </p>
 
----
+
 
 ## Mosaic Outputs
 
