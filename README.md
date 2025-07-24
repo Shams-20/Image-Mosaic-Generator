@@ -72,20 +72,18 @@ After running `main.py`, you’ll get two beautiful nightmares:
 
 ---
 
-## Image Previews 
+## Original Inputs
 
-## 🎯 Original Inputs
-
-<p float="left">
+<p float="center">
   <img src="mona.png" width="300" alt="Mona Input" />
   <img src="shrek.jpeg"  alt="Shrek Tile" />
 </p>
 
 ---
 
-## 🧩 Mosaic Outputs
+## Mosaic Outputs
 
-<p float="left">
+<p float="centre">
   <img src="mosaic_single.png" width="300" alt="Single Tile Output" />
   <img src="mosaic_photo.png" width="300" alt="Photomosaic Output" />
 </p>
