@@ -29,7 +29,7 @@ Image-Mosaic-Generator/
 ├── mosaic_cartman.png       # Output: Single-tile mosaic
 ├── main.py                  # Main Python script
 └── README.md                # This sexy file you're reading
-             
+```             
 
 ## Requirements
 
@@ -72,14 +72,12 @@ After running `main.py`, you’ll get two beautiful nightmares:
 
 ---
 
-## Inserting Image Previews (For README Display)
+## Inserting Image Previews 
+
+![Single Tile Output](mosaic_single.png)  
+![Photomosaic Output](photomosaic_photo.png)
 
 
-```markdown
-![Single Tile Output](mosaic_cartman.png)  
-![Photomosaic Output](photomosaic_output.png)
-
----
 
 ## Tips
 
