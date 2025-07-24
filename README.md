@@ -22,7 +22,7 @@ This program:
 Image-Mosaic-Generator/
 │
 ├── tiles/                   # Folder of tile images (8x8 grayscale)
-│   └── generate_tiles.py    # Script to generate tile images from any source
+│   └── tiles.py             # Script to generate tile images 
 ├── mona.png                 # Target image to be rebuilt (grayscale)
 ├── shrek.jpeg               # Image used for single-tile mosaic
 ├── photomosaic_output.png   # Output: Multi-tile mosaic
@@ -67,8 +67,8 @@ cd Image-Mosaic-Generator
 
 After running `main.py`, you’ll get two beautiful nightmares:
 
-- `mosaic_cartman.png` → The mosaic using the single tile (`shrek.jpeg`)  
-- `photomosaic_output.png` → The multi-tile photomosaic using images from `tiles/`
+- `mosaic_photo.png` → The mosaic using the single tile (`shrek.jpeg`)  
+- `mosaic_single.png` → The multi-tile photomosaic using images from `tiles/`
 
 
 
