@@ -17,7 +17,7 @@ def load_tiles(folder, size):
             tiles.append(arr)
             means.append(arr.mean())
         except:
-            pass  
+            pass  # skip garbage
     return tiles, means
 
 def find_best_tile(means, val):
@@ -44,34 +44,38 @@ def create_photo_mosaic(big_img, tiles, means, tile_size, scale=0.05):
     h, w = tile_size
     mosaic = np.zeros((small.shape[0] * h, small.shape[1] * w), dtype=np.uint8)
     for i in range(small.shape[0]):
-        print(f"   Row {i+1}/{small.shape[0]}")  
+        print(f"   Row {i+1}/{small.shape[0]}")  # Progress output
         for j in range(small.shape[1]):
             idx = find_best_tile(means, small[i, j])
             mosaic[i*h:(i+1)*h, j*w:(j+1)*w] = tiles[idx]
     return mosaic
 
-tile_path = "shrek.jpeg"       
-source_path = "mona.png"        
-tiles_folder = "tiles"           
-tile_size = (32, 32)           
-scale_factor = 0.1          
+# CONFIG (tweak these as you like)
+tile_path = "shrek.jpeg"         # tile image (for single-tile mosaic)
+source_path = "mona.png"         # image to turn into mosaic
+tiles_folder = "tiles"           # folder of multiple tile images
+tile_size = (32, 32)             # tile dimension
+scale_factor = 0.1             # mosaic resolution control (0.05 = faster, but blurr)
 
+# File checks
 if not os.path.exists(tile_path) or not os.path.exists(source_path):
-    print("Your image files are MIA. Check your paths.")
+    print("❌ Your image files are MIA. Check your path.")
     exit()
 
-# 📸 Load images
+# Load images
 big_img = np.array(Image.open(source_path).convert('L'))
 tile_img = np.array(Image.open(tile_path).convert('L'))
 tiles, tile_means = load_tiles(tiles_folder, tile_size)
 
 if not tiles:
-    print("Your tiles folder is either empty or full of garbage. Feed better tiles")
+    print("Your tiles folder is either empty or full of garbage. Feed better tiles.")
     exit()
 
+# Mosaic creation
 mosaic_single = create_single_mosaic(tile_img, big_img, scale=scale_factor)
 mosaic_multi = create_photo_mosaic(big_img, tiles, tile_means, tile_size, scale=scale_factor)
 
+# Display and save
 plt.figure(figsize=(12, 6))
 plt.subplot(1, 2, 1); plt.imshow(mosaic_single, cmap='gray'); plt.title("Single Tile Mosaic"); plt.axis('off')
 plt.subplot(1, 2, 2); plt.imshow(mosaic_multi, cmap='gray'); plt.title("Photomosaic"); plt.axis('off')
@@ -79,4 +83,4 @@ plt.tight_layout(); plt.show()
 
 Image.fromarray(mosaic_single).save("mosaic_single.png")
 Image.fromarray(mosaic_multi).save("mosaic_photo.png")
-print("Done! Saved 'mosaic_single.png' & 'mosaic_photo.png' ")
+print("Done! Saved 'mosaic_single.png' & 'mosaic_photo.png'")
