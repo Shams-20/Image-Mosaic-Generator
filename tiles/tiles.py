@@ -3,17 +3,19 @@ import numpy as np
 import cv2
 
 OUTPUT_FOLDER = 'tiles/'
-TILE_SIZE = 50  
-NUM_TILES = 50  
+TILE_SIZE = 50  # Size of each tile (50x50 px)
+NUM_TILES = 50  # Number of synthetic tiles to generate
 
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
 for i in range(NUM_TILES):
-    
-    intensity = int((i / (NUM_TILES - 1)) * 255)  
+    # Random or evenly spaced intensity
+    intensity = int((i / (NUM_TILES - 1)) * 255)  # From black to white, evenly spaced
 
+    # Create tile filled with that intensity
     tile = np.full((TILE_SIZE, TILE_SIZE, 3), intensity, dtype=np.uint8)
 
+    # Add some random noise or patterns to make it look less flat
     noise = np.random.randint(-10, 10, (TILE_SIZE, TILE_SIZE, 3), dtype=np.int8)
     tile = np.clip(tile + noise, 0, 255).astype(np.uint8)
 
